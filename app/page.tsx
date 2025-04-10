@@ -1,9 +1,8 @@
 import * as React from "react"
 
-import * as motion from "motion/react-client"
-
-import { BASE_TRANSITION } from "@/utils/animation"
 import { getMetadata } from "@/utils/metadata"
+
+import { TextScramble } from "@/components/text-scramble"
 
 export const metadata = getMetadata({
   path: "/",
@@ -14,14 +13,11 @@ export const metadata = getMetadata({
 const Home: React.FC = () => {
   return (
     <main className="grid h-dvh place-content-center">
-      <motion.h1
-        initial={{ translateY: 20, opacity: 0, filter: `blur(10px)` }}
-        animate={{ translateY: 0, opacity: 1, filter: "none" }}
-        transition={{ delay: 0, ...BASE_TRANSITION }}
-        className="text-5xl font-bold tracking-tighter text-zinc-800"
-      >
-        UI Animation Challenge
-      </motion.h1>
+      <h1 className="text-5xl text-zinc-800">
+        <TextScramble className="font-mono uppercase">
+          UI Animation Challenge
+        </TextScramble>
+      </h1>
     </main>
   )
 }

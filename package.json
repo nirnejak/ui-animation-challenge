@@ -25,6 +25,7 @@
     "react-dom": "^19.1.0",
     "sharp": "^0.34.1",
     "sonner": "^2.0.3",
+    "tailwind-merge": "^3.2.0",
     "use-sound": "^5.0.0"
   },
   "devDependencies": {
