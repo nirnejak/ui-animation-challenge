@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         transition={{ delay: 0, ...BASE_TRANSITION }}
         className="text-5xl font-bold tracking-tighter text-zinc-800"
       >
-        UI Animation Challenge!
+        UI Animation Challenge
       </motion.h1>
     </main>
   )
