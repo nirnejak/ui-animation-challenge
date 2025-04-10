@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-typescript-saas",
+  "name": "ui-animation-challenge",
   "description": "UI Animation Challenge",
   "version": "1.0.0",
   "author": "Jitendra Nirnejak <jeetnirnejak@gmail.com>",
@@ -74,9 +74,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nirnejak/nextjs-typescript-saas"
+    "url": "https://github.com/nirnejak/ui-animation-challenge"
   },
   "bugs": {
-    "url": "https://github.com/nirnejak/nextjs-typescript-saas/issues"
+    "url": "https://github.com/nirnejak/ui-animation-challenge/issues"
   }
 }

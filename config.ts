@@ -1,5 +1,5 @@
 const config = {
-  baseUrl: "https://nextjs-typescript-saas.vercel.app",
+  baseUrl: "https://ui-animation-challenge.vercel.app",
   appName: "UI Animation Challenge",
   appDescription: "UI Peerlist Animation Challenge",
   creator: "Jitendra Nirnejak",
