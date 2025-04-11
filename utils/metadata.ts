@@ -44,7 +44,7 @@ export const getMetadata = ({
       title: metaTitle,
       description: metaDescription,
       images: metaImage,
-      videos: `${config.baseUrl}/video.mov`,
+      videos: `${config.baseUrl}/cover.mov`,
     },
 
     twitter: {
