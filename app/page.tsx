@@ -12,12 +12,23 @@ export const metadata = getMetadata({
 
 const Home: React.FC = () => {
   return (
-    <main className="grid h-dvh place-content-center">
-      <h1 className="text-5xl text-zinc-800">
-        <TextScramble className="font-mono uppercase">
-          UI Animation Challenge
-        </TextScramble>
-      </h1>
+    <main className="flex items-center h-dvh mx-32">
+      <div>
+        <h1 className="text-5xl text-zinc-800">
+          <TextScramble className="font-mono uppercase">Peerlist</TextScramble>
+          <TextScramble className="font-mono uppercase">
+            UI Animation
+          </TextScramble>
+          <TextScramble className="font-mono uppercase">Challenge</TextScramble>
+        </h1>
+
+        <a
+          href="https://x.com/jeetnirnejak"
+          className="flex text-zinc-500 text-xl mt-12"
+        >
+          <TextScramble className="font-mono">x.com/jeetnirnejak</TextScramble>
+        </a>
+      </div>
     </main>
   )
 }

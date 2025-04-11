@@ -3,7 +3,7 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import { Inter } from "next/font/google"
+import { Inter, Geist_Mono } from "next/font/google"
 import localFont from "next/font/local"
 
 import classNames from "@/utils/classNames"
@@ -17,7 +17,13 @@ const sansFont = Inter({
   display: "swap",
 })
 
-const monoFont = localFont({
+const monoFont = Geist_Mono({
+  variable: "--mono-font",
+  subsets: ["latin"],
+  display: "swap",
+})
+
+const monoFontSecondary = localFont({
   variable: "--mono-font",
   src: [
     {
