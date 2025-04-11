@@ -25,12 +25,14 @@ const Home: React.FC = () => {
         <div className="flex gap-6 mt-16">
           <a
             href="https://x.com/jeetnirnejak"
+            target="_blank"
             className="text-zinc-500 hover:text-zinc-800 transition-colors text-lg"
           >
             <TextScramble className="font-mono">Twitter</TextScramble>
           </a>
           <a
             href="http://peerlist.io/nirnejak"
+            target="_blank"
             className="text-zinc-500 hover:text-zinc-800 transition-colors text-lg"
           >
             <TextScramble className="font-mono">Peerlist</TextScramble>
