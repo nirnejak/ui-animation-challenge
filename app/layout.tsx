@@ -51,7 +51,14 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         lang="en"
         className={classNames(sansFont.variable, monoFont.variable)}
       >
-        <head>{renderSchemaTags()}</head>
+        <head>
+          <script
+            defer
+            data-domain="ui-animation-challenge.vercel.app"
+            src="https://plausible.io/js/script.js"
+          />
+          {renderSchemaTags()}
+        </head>
 
         <body className={"overflow-x-hidden bg-zinc-50 font-sans"}>
           {children}
