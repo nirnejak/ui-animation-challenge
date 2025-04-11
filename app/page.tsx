@@ -22,12 +22,20 @@ const Home: React.FC = () => {
           <TextScramble className="font-mono uppercase">Challenge</TextScramble>
         </h1>
 
-        <a
-          href="https://x.com/jeetnirnejak"
-          className="inline-flex text-zinc-500 text-xl mt-12"
-        >
-          <TextScramble className="font-mono">x.com/jeetnirnejak</TextScramble>
-        </a>
+        <div className="flex gap-6 mt-16">
+          <a
+            href="https://x.com/jeetnirnejak"
+            className="text-zinc-500 hover:text-zinc-800 transition-colors text-lg"
+          >
+            <TextScramble className="font-mono">Twitter</TextScramble>
+          </a>
+          <a
+            href="http://peerlist.io/nirnejak"
+            className="text-zinc-500 hover:text-zinc-800 transition-colors text-lg"
+          >
+            <TextScramble className="font-mono">Peerlist</TextScramble>
+          </a>
+        </div>
       </div>
     </main>
   )
