@@ -4,7 +4,6 @@ import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
 import { Inter, Geist_Mono } from "next/font/google"
-import localFont from "next/font/local"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -23,17 +22,6 @@ const monoFont = Geist_Mono({
   variable: "--mono-font",
   subsets: ["latin"],
   display: "swap",
-})
-
-const monoFontSecondary = localFont({
-  variable: "--mono-font",
-  src: [
-    {
-      path: "../fonts/JetBrainsMono-Regular.ttf",
-      weight: "regular",
-      style: "normal",
-    },
-  ],
 })
 
 export const viewport: Viewport = {
