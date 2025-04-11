@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 
         <a
           href="https://x.com/jeetnirnejak"
-          className="flex text-zinc-500 text-xl mt-12"
+          className="inline-flex text-zinc-500 text-xl mt-12"
         >
           <TextScramble className="font-mono">x.com/jeetnirnejak</TextScramble>
         </a>
