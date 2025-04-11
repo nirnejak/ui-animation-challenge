@@ -9,6 +9,8 @@ import localFont from "next/font/local"
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
 
+import DotPattern from "@/components/DotPattern"
+
 import "../styles/main.css"
 
 const sansFont = Inter({
@@ -53,6 +55,8 @@ const RootLayout: React.FC<Props> = ({ children }) => {
 
         <body className={"overflow-x-hidden bg-zinc-50 font-sans"}>
           {children}
+
+          <DotPattern />
         </body>
       </html>
     </ViewTransitions>
