@@ -43,7 +43,7 @@ export const getMetadata = ({
       siteName: config.appName,
       title: metaTitle,
       description: metaDescription,
-      images: metaImage,
+      // images: metaImage,
       videos: [
         {
           url: `${config.baseUrl}/video.mov`,
@@ -59,7 +59,7 @@ export const getMetadata = ({
       creator: config.twitterCreator,
       title: metaTitle,
       description: metaDescription,
-      images: metaImage,
+      // images: metaImage,
     },
 
     appleWebApp: {
