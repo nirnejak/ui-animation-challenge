@@ -17,6 +17,7 @@
     "akar-icons": "^1.9.31",
     "class-variance-authority": "^0.7.1",
     "dotenv": "^16.5.0",
+    "lucide-react": "^0.487.0",
     "motion": "^12.6.5",
     "next": "^15.3.0",
     "next-auth": "^5.0.0-beta.25",
