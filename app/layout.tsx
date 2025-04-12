@@ -8,9 +8,7 @@ import { Inter, Geist_Mono } from "next/font/google"
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
 
-import DotPattern from "@/components/DotPattern"
 import Header from "@/components/Header"
-import Footer from "@/components/Footer"
 
 import "../styles/main.css"
 
@@ -53,8 +51,6 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <body className={"overflow-x-hidden bg-zinc-50 font-mono p-6 md:p-16"}>
           <Header />
           {children}
-
-          {/* <DotPattern /> */}
         </body>
       </html>
     </ViewTransitions>
