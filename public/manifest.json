@@ -6,7 +6,7 @@
     "start_url": "/",
     "name": "UI Animation Challenge",
     "short_name": "UI Animation Challenge",
-    "description": "Next.js starter for building SaaS products configured TypeScript, Drizzle, NextAuth, ESLint, Tailwind, Framer Motion etc.",
+    "description": "Peerlist UI Animation Challenge",
     "icons": [
         {
             "src": "/path-to-icons/icon-192x192.png",
