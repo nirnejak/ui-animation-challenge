@@ -11,6 +11,7 @@ import { renderSchemaTags } from "@/utils/schema"
 import DotPattern from "@/components/DotPattern"
 
 import "../styles/main.css"
+import Header from "@/components/Header"
 
 const sansFont = Inter({
   variable: "--sans-font",
@@ -48,7 +49,8 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           {renderSchemaTags()}
         </head>
 
-        <body className={"overflow-x-hidden bg-zinc-50 font-sans"}>
+        <body className={"overflow-x-hidden bg-zinc-50 font-mono p-6 md:p-20"}>
+          <Header />
           {children}
 
           <DotPattern />
