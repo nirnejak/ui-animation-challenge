@@ -15,23 +15,23 @@ const links = [
   },
   {
     href: "/day-2/",
-    text: "Day 2 - Coming Soon",
+    text: "Day 2 - Not yet announced",
   },
   {
     href: "/day-3/",
-    text: "Day 3 - Coming Soon",
+    text: "Day 3 - Not yet announced",
   },
   {
     href: "/day-4/",
-    text: "Day 4 - Coming Soon",
+    text: "Day 4 - Not yet announced",
   },
   {
     href: "/day-5/",
-    text: "Day 5 - Coming Soon",
+    text: "Day 5 - Not yet announced",
   },
   {
     href: "/day-6/",
-    text: "Day 6 - Coming Soon",
+    text: "Day 6 - Not yet announced",
   },
 ]
 
