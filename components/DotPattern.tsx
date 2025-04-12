@@ -14,8 +14,8 @@ interface DotPatternProps {
 }
 
 const DotPattern: React.FC<DotPatternProps> = ({
-  width = 16,
-  height = 16,
+  width = 12,
+  height = 12,
   x = 0,
   y = 0,
   cx = 1,
@@ -30,7 +30,7 @@ const DotPattern: React.FC<DotPatternProps> = ({
     <svg
       aria-hidden="true"
       className={classNames(
-        "pointer-events-none h-full w-full fill-neutral-400/25 z-[-1] fixed inset-0",
+        "pointer-events-none h-full w-full fill-neutral-400/20 z-[-1] fixed inset-0",
         className
       )}
       {...props}
