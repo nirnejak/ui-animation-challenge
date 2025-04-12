@@ -10,9 +10,9 @@ export const metadata = getMetadata({
 
 const NotFound: React.FC = () => {
   return (
-    <main className="mt-36 text-center">
-      <h1 className="mb-3 text-5xl tracking-tight text-zinc-800">404</h1>
-    </main>
+    <h1 className="mt-36 text-5xl tracking-tight text-zinc-800 text-center">
+      404
+    </h1>
   )
 }
 
