@@ -25,7 +25,7 @@ const monoFont = Geist_Mono({
 })
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#f4f4f5",
 }
 
 interface Props {
