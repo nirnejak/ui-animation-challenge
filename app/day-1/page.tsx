@@ -2,6 +2,8 @@ import * as React from "react"
 
 import { getMetadata } from "@/utils/metadata"
 
+import Message from "@/components/Message"
+
 export const metadata = getMetadata({
   path: "/day-1/",
   title: "Day 1 - UI Animation Challenge",
@@ -9,13 +11,7 @@ export const metadata = getMetadata({
 })
 
 const Day1: React.FC = () => {
-  return (
-    <main className="w-full mt-12 rounded-xl bg-zinc-50 border border-zinc-200">
-      <div className="h-[300px] grid place-content-center">
-        Fluid Menu Animation
-      </div>
-    </main>
-  )
+  return <Message message="Fluid Menu Animation" />
 }
 
 export default Day1

@@ -53,7 +53,6 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <body className={"overflow-x-hidden bg-zinc-50 font-mono p-6 md:p-20"}>
           <Header />
           {children}
-          <Footer />
 
           <DotPattern />
         </body>
