@@ -3,7 +3,7 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import { Inter, Geist_Mono } from "next/font/google"
+import { Inter, Geist_Mono, Bricolage_Grotesque } from "next/font/google"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -12,7 +12,7 @@ import Header from "@/components/Header"
 
 import "../styles/main.css"
 
-const sansFont = Inter({
+const sansFont = Bricolage_Grotesque({
   variable: "--sans-font",
   subsets: ["latin"],
   display: "swap",
@@ -48,7 +48,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           {renderSchemaTags()}
         </head>
 
-        <body className={"overflow-x-hidden bg-zinc-100 font-mono p-6 md:p-16"}>
+        <body className="overflow-x-hidden bg-zinc-100 font-mono p-6 md:p-16">
           <Header />
           {children}
         </body>

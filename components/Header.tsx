@@ -52,7 +52,7 @@ const Header: React.FC = () => {
         <a
           href="https://x.com/jeetnirnejak"
           target="_blank"
-          className="tracking-tight text-zinc-500 hover:text-zinc-800 transition-colors text-xs md:text-base mb-2 md:mb-0"
+          className="tracking-tight text-zinc-500 hover:text-zinc-800 transition-colors text-xs md:text-sm mb-2 md:mb-0"
         >
           <TextScramble>by Jitendra Nirnejak</TextScramble>
         </a>
