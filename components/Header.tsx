@@ -29,10 +29,6 @@ const links = [
     href: "/day-5/",
     text: "Day 5 - Not yet announced",
   },
-  {
-    href: "/day-6/",
-    text: "Day 6 - Not yet announced",
-  },
 ]
 
 const Header: React.FC = () => {
