@@ -8,12 +8,39 @@ import classNames from "@/utils/classNames"
 
 import { TextScramble } from "@/components/text-scramble"
 
+const links = [
+  {
+    href: "/day-1/",
+    text: "Day 1 - Fluid Menu Animation",
+  },
+  {
+    href: "/day-2/",
+    text: "Day 2 - Coming Soon",
+  },
+  {
+    href: "/day-3/",
+    text: "Day 3 - Coming Soon",
+  },
+  {
+    href: "/day-4/",
+    text: "Day 4 - Coming Soon",
+  },
+  {
+    href: "/day-5/",
+    text: "Day 5 - Coming Soon",
+  },
+  {
+    href: "/day-6/",
+    text: "Day 6 - Coming Soon",
+  },
+]
+
 const Header: React.FC = () => {
   const pathname = usePathname()
 
   return (
     <header className="grid grid-cols-1 md:grid-cols-2">
-      <section className="flex flex-col justify-between items-start">
+      <section className="flex flex-col-reverse md:flex-col justify-between items-start">
         <Link href="/">
           <h1 className="text-xl md:text-2xl text-zinc-800 tracking-tight">
             <TextScramble className="uppercase">Peerlist</TextScramble>
@@ -25,72 +52,25 @@ const Header: React.FC = () => {
         <a
           href="https://x.com/jeetnirnejak"
           target="_blank"
-          className="hidden md:block text-zinc-500 hover:text-zinc-800 transition-colors text-xs md:text-base tracking-tight"
+          className="tracking-tight text-zinc-500 hover:text-zinc-800 transition-colors text-xs md:text-base mb-2 md:mb-0"
         >
           <TextScramble>by Jitendra Nirnejak</TextScramble>
         </a>
       </section>
-      <section className="flex flex-col gap-2 text-sm md:text-base mt-12 md:mt-0 tracking-tight font-sans">
-        <Link
-          href="/day-1/"
-          className={classNames(
-            "text-zinc-800",
-            pathname !== "/" && "opacity-35 hover:opacity-100 transition-all",
-            pathname === "/day-1/" ? "opacity-100" : ""
-          )}
-        >
-          <span className="">Day 1 </span>- Fluid Menu Animation
-        </Link>
-        <Link
-          href="/day-2/"
-          className={classNames(
-            "text-zinc-800",
-            pathname !== "/" && "opacity-35 hover:opacity-100 transition-all",
-            pathname === "/day-2/" ? "opacity-100" : ""
-          )}
-        >
-          <span className="">Day 2 </span>- Coming Soon
-        </Link>
-        <Link
-          href="/day-3/"
-          className={classNames(
-            "text-zinc-800",
-            pathname !== "/" && "opacity-35 hover:opacity-100 transition-all",
-            pathname === "/day-3/" ? "opacity-100" : ""
-          )}
-        >
-          <span className="">Day 3 </span>- Coming Soon
-        </Link>
-        <Link
-          href="/day-4/"
-          className={classNames(
-            "text-zinc-800",
-            pathname !== "/" && "opacity-35 hover:opacity-100 transition-all",
-            pathname === "/day-4/" ? "opacity-100" : ""
-          )}
-        >
-          <span className="">Day 4 </span>- Coming Soon
-        </Link>
-        <Link
-          href="/day-5/"
-          className={classNames(
-            "text-zinc-800",
-            pathname !== "/" && "opacity-35 hover:opacity-100 transition-all",
-            pathname === "/day-5/" ? "opacity-100" : ""
-          )}
-        >
-          <span className="">Day 5 </span>- Coming Soon
-        </Link>
-        <Link
-          href="/day-6/"
-          className={classNames(
-            "text-zinc-800",
-            pathname !== "/" && "opacity-35 hover:opacity-100 transition-all",
-            pathname === "/day-6/" ? "opacity-100" : ""
-          )}
-        >
-          <span className="">Day 6 </span>- Coming Soon
-        </Link>
+      <section className="flex flex-col gap-2 mt-12 md:mt-0">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={classNames(
+              "font-mono text-zinc-800 tracking-tight text-sm",
+              pathname !== "/" && "opacity-35 hover:opacity-100 transition-all",
+              pathname === link.href ? "opacity-100" : ""
+            )}
+          >
+            <TextScramble>{link.text}</TextScramble>
+          </Link>
+        ))}
       </section>
     </header>
   )
