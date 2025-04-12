@@ -50,11 +50,11 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           {renderSchemaTags()}
         </head>
 
-        <body className={"overflow-x-hidden bg-zinc-50 font-mono p-6 md:p-20"}>
+        <body className={"overflow-x-hidden bg-zinc-50 font-mono p-6 md:p-16"}>
           <Header />
           {children}
 
-          <DotPattern />
+          {/* <DotPattern /> */}
         </body>
       </html>
     </ViewTransitions>
