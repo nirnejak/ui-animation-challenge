@@ -12,33 +12,44 @@ export const metadata = getMetadata({
 
 const Home: React.FC = () => {
   return (
-    <main className="flex items-center h-dvh mx-32">
-      <div>
-        <h1 className="text-5xl text-zinc-800">
-          <TextScramble className="font-mono uppercase">Peerlist</TextScramble>
-          <TextScramble className="font-mono uppercase">
-            UI Animation
-          </TextScramble>
-          <TextScramble className="font-mono uppercase">Challenge</TextScramble>
+    <main className="font-mono grid grid-cols-1 md:grid-cols-2 p-6 md:p-32">
+      <section className="flex flex-col justify-between">
+        <h1 className="text-2xl text-zinc-800">
+          <TextScramble className="uppercase">Peerlist</TextScramble>
+          <TextScramble className="uppercase">UI Animation</TextScramble>
+          <TextScramble className="uppercase">Challenge</TextScramble>
         </h1>
 
-        <div className="flex gap-6 mt-16">
+        <div className="fixed bottom-4 right-0 md:static flex gap-6 justify-center md:justify-start w-full md:mt-2">
           <a
             href="https://x.com/jeetnirnejak"
             target="_blank"
-            className="text-zinc-500 hover:text-zinc-800 transition-colors text-lg"
+            className="text-zinc-500 hover:text-zinc-800 transition-colors text-xs md:text-base"
           >
-            <TextScramble className="font-mono">Twitter</TextScramble>
-          </a>
-          <a
-            href="http://peerlist.io/nirnejak"
-            target="_blank"
-            className="text-zinc-500 hover:text-zinc-800 transition-colors text-lg"
-          >
-            <TextScramble className="font-mono">Peerlist</TextScramble>
+            <TextScramble>by Jitendra Nirnejak</TextScramble>
           </a>
         </div>
-      </div>
+      </section>
+      <section className="flex flex-col gap-2 text-sm md:text-base mt-20 md:mt-0">
+        <a href="/day-1/" className="text-zinc-800">
+          <span className="text-zinc-500">Day 1 </span>- Coming Soon
+        </a>
+        <a href="/day-2/" className="text-zinc-800">
+          <span className="text-zinc-500">Day 2 </span>- Coming Soon
+        </a>
+        <a href="/day-3/" className="text-zinc-800">
+          <span className="text-zinc-500">Day 3 </span>- Coming Soon
+        </a>
+        <a href="/day-4/" className="text-zinc-800">
+          <span className="text-zinc-500">Day 4 </span>- Coming Soon
+        </a>
+        <a href="/day-5/" className="text-zinc-800">
+          <span className="text-zinc-500">Day 5 </span>- Coming Soon
+        </a>
+        <a href="/day-6/" className="text-zinc-800">
+          <span className="text-zinc-500">Day 6 </span>- Coming Soon
+        </a>
+      </section>
     </main>
   )
 }
