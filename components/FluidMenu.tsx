@@ -26,7 +26,7 @@ const FluidMenu: React.FC = () => {
               return (
                 <motion.button
                   key={item.label}
-                  className="absolute w-12 h-12 bg-[#efefef] rounded-full flex items-center justify-center"
+                  className="absolute w-12 h-12 bg-[#efefef] rounded-full flex items-center justify-center cursor-pointer"
                   initial={{ x: 0, opacity: 0 }}
                   animate={{
                     y: (index + 1) * 44,
@@ -62,7 +62,9 @@ const FluidMenu: React.FC = () => {
                         bounce: 0,
                       }}
                     >
-                      <Icon className="w-5 h-5 text-muted-foreground hover:text-black" />
+                      <a>
+                        <Icon className="w-5 h-5 text-zinc-500 hover:text-black" />
+                      </a>
                     </motion.div>
                   </AnimatePresence>
                 </motion.button>
@@ -71,7 +73,7 @@ const FluidMenu: React.FC = () => {
         </AnimatePresence>
 
         <motion.button
-          className="relative w-12 h-12 bg-[#efefef] rounded-full flex items-center justify-center"
+          className="relative w-12 h-12 bg-[#efefef] rounded-full flex items-center justify-center cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
           <AnimatePresence mode="wait">
@@ -83,7 +85,7 @@ const FluidMenu: React.FC = () => {
                 exit={{ opacity: 0, filter: "blur(10px)" }}
                 transition={{ duration: 0.2 }}
               >
-                <X className="w-5 h-5 text-black" />
+                <X className="w-5 h-5 text-black cursor-pointer" />
               </motion.div>
             ) : (
               <motion.div
