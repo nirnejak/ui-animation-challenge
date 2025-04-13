@@ -52,13 +52,12 @@ const DynamicStatusIndicator: React.FC = () => {
             height="24"
             className="w-4 h-4"
             ref={scope}
-            initial={{ rotate: 0 }}
             animate={{ rotate: [0, 360 * 5, 360 * 7] }}
             transition={{
-              repeat: Infinity,
-              duration: 3,
               times: [0, 0.3, 1],
               ease: ["circIn", "circOut"],
+              repeat: Infinity,
+              duration: 3,
             }}
             fill="none"
             viewBox="0 0 24 24"
