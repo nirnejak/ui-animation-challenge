@@ -13,21 +13,10 @@ const status = [
 
 const DynamicStatusIndicator: React.FC = () => {
   const elementRef = React.useRef<HTMLDivElement>(null)
-  const [width, setWidth] = React.useState(0)
 
   const [currentStatusIndex, setCurrentStatusIndex] = React.useState(0)
 
   React.useEffect(() => {
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        const rect = entry.target.getBoundingClientRect()
-        setWidth(rect.width)
-      }
-    })
-    if (elementRef.current !== null) {
-      observer.observe(elementRef.current)
-    }
-
     const interval = setInterval(() => {
       setCurrentStatusIndex((prev) => {
         if (prev < status.length - 1) {
@@ -39,15 +28,14 @@ const DynamicStatusIndicator: React.FC = () => {
     }, 2000)
 
     return () => {
-      observer.disconnect()
       clearInterval(interval)
     }
   }, [])
 
   return (
     <motion.div
-      animate={{ width }}
-      transition={{ type: "spring", duration: 0.4 }}
+      layout
+      transition={{ type: "spring", duration: 0.3 }}
       className={classNames(
         "rounded-full font-sans text-sm leading-none tracking-tight",
         getColor(status[currentStatusIndex])
@@ -59,10 +47,10 @@ const DynamicStatusIndicator: React.FC = () => {
       >
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
-            transition={{ type: "spring", duration: 0.3 }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
+            transition={{ ease: "easeInOut", duration: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             key={currentStatusIndex}
           >
             <div>{getIcon(status[currentStatusIndex])}</div>
@@ -70,13 +58,14 @@ const DynamicStatusIndicator: React.FC = () => {
         </AnimatePresence>
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
-            transition={{ type: "spring", duration: 0.3 }}
+            transition={{ ease: "easeInOut", duration: 0.2 }}
             initial={{ opacity: 0, x: currentStatusIndex % 2 ? 20 : -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: currentStatusIndex % 2 ? -20 : 20 }}
             key={currentStatusIndex}
+            className="py-1.5 pr-0.5"
           >
-            <div className="py-1.5 pr-0.5">{status[currentStatusIndex]}</div>
+            {status[currentStatusIndex]}
           </motion.span>
         </AnimatePresence>
       </div>
@@ -107,7 +96,7 @@ const getIcon = (status: string) => {
           width="24"
           height="24"
           className="w-4 h-4"
-          animate={{ rotate: [0, 360] }}
+          animate={{ rotate: 360 }}
           transition={{
             duration: 0.5,
             repeat: Infinity,
