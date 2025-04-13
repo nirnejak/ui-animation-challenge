@@ -3,7 +3,7 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import { Inter, Geist_Mono, Bricolage_Grotesque } from "next/font/google"
+import { Geist_Mono, Mona_Sans } from "next/font/google"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -12,7 +12,7 @@ import Header from "@/components/Header"
 
 import "../styles/main.css"
 
-const sansFont = Bricolage_Grotesque({
+const sansFont = Mona_Sans({
   variable: "--sans-font",
   subsets: ["latin"],
   display: "swap",
