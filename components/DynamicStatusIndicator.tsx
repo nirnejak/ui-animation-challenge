@@ -106,11 +106,12 @@ const getIcon = (status: string) => {
           width="24"
           height="24"
           className="w-4 h-4"
-          animate={{ rotate: 360 }}
+          animate={{ rotate: [0, 360 * 5, 360 * 7] }}
           transition={{
-            duration: 0.5,
             repeat: Infinity,
-            ease: "linear",
+            duration: 3,
+            times: [0, 0.3, 1],
+            ease: ["circIn", "circOut"],
           }}
           fill="none"
           viewBox="0 0 24 24"
