@@ -2,6 +2,7 @@
 import * as React from "react"
 
 import { AnimatePresence, motion } from "motion/react"
+import classNames from "@/utils/classNames"
 
 const status = [
   "Analyzing Transaction",
@@ -46,23 +47,35 @@ const DynamicStatusIndicator: React.FC = () => {
   return (
     <motion.div
       animate={{ width }}
-      transition={{
-        type: "spring",
-        duration: 0.4,
-      }}
-      className={`rounded-full ${getColor(status[currentStatusIndex])} font-sans text-sm`}
+      transition={{ type: "spring", duration: 0.4 }}
+      className={classNames(
+        "rounded-full font-sans text-sm leading-none tracking-tight",
+        getColor(status[currentStatusIndex])
+      )}
     >
-      <div ref={elementRef} className="w-max py-1.5 px-2.5 overflow-hidden">
+      <div
+        ref={elementRef}
+        className="w-max py-1.5 px-2.5 overflow-hidden flex items-center gap-1.5"
+      >
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
-            transition={{ type: "spring", duration: 0.3, bounce: 0 }}
+            transition={{ type: "spring", duration: 0.3 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            key={currentStatusIndex}
+          >
+            <div>{getIcon(status[currentStatusIndex])}</div>
+          </motion.span>
+        </AnimatePresence>
+        <AnimatePresence mode="popLayout" initial={false}>
+          <motion.span
+            transition={{ type: "spring", duration: 0.3 }}
             initial={{ opacity: 0, x: currentStatusIndex % 2 ? 20 : -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: currentStatusIndex % 2 ? -20 : 20 }}
             key={currentStatusIndex}
-            className="flex justify-center items-center gap-1.5 leading-none tracking-tight"
           >
-            <div>{getIcon(status[currentStatusIndex])}</div>
             <div className="py-1.5 pr-0.5">{status[currentStatusIndex]}</div>
           </motion.span>
         </AnimatePresence>
@@ -138,7 +151,7 @@ const getIcon = (status: string) => {
           className="w-4 h-4 ml-0.5"
           animate={{ x: [0, -3, 3, -3, 3, 0] }}
           transition={{
-            delay: 0.1,
+            delay: 0.2,
             duration: 0.3,
             ease: "easeInOut",
           }}
