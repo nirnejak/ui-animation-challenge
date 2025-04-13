@@ -15,7 +15,7 @@ const links = [
   },
   {
     href: "/day-2/",
-    text: "Day 2 - Dynamaic Status Indicator",
+    text: "Day 2 - Dynamic Status Indicator",
   },
   {
     href: "/day-3/",
