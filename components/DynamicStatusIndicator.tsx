@@ -35,7 +35,7 @@ const DynamicStatusIndicator: React.FC = () => {
   return (
     <motion.div
       layout
-      transition={{ type: "spring", duration: 0.3 }}
+      transition={{ type: "spring", duration: 0.15 }}
       className={classNames(
         "rounded-full font-sans text-sm leading-none tracking-tight",
         getColor(status[currentStatusIndex])
@@ -47,7 +47,12 @@ const DynamicStatusIndicator: React.FC = () => {
       >
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
-            transition={{ ease: "easeInOut", duration: 0.2 }}
+            transition={{
+              duration: 0.15,
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -58,7 +63,12 @@ const DynamicStatusIndicator: React.FC = () => {
         </AnimatePresence>
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
-            transition={{ ease: "easeInOut", duration: 0.2 }}
+            transition={{
+              duration: 0.15,
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+            }}
             initial={{ opacity: 0, x: currentStatusIndex % 2 ? 20 : -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: currentStatusIndex % 2 ? -20 : 20 }}
