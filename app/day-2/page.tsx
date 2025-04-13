@@ -6,8 +6,9 @@ import DynamicStatusIndicator from "@/components/DynamicStatusIndicator"
 
 export const metadata = getMetadata({
   path: "/day-2/",
-  title: "Day 2 - UI Animation Challenge",
-  description: "Day 2 - UI Animation Challenge",
+  title: "Day 2 - Dynamic Status Indicator",
+  description:
+    "Day 2 - Dynamic Status Indicator, Peerlist UI Animation Challenge",
 })
 
 const Day2: React.FC = () => {

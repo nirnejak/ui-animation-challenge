@@ -6,8 +6,8 @@ import FluidMenu from "@/components/FluidMenu"
 
 export const metadata = getMetadata({
   path: "/day-1/",
-  title: "Day 1 - UI Animation Challenge",
-  description: "Day 1 - UI Animation Challenge",
+  title: "Day 1 - Fluid Menu Animation",
+  description: "Day 1 - Fluid Menu Animation, Peerlist UI Animation Challenge",
 })
 
 const Day1: React.FC = () => {
