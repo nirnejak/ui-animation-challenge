@@ -40,6 +40,13 @@ export default function Checkbox({ children, id }: CheckboxProps) {
 function CheckboxIndicator() {
   const { id, isChecked, setIsChecked } = React.useContext(CheckboxContext)
 
+  const currentState = React.useMemo(() => {
+    if (isChecked) {
+      return "checked"
+    }
+    return "unchecked"
+  }, [isChecked])
+
   return (
     <label className="relative flex items-center">
       <input
@@ -48,9 +55,9 @@ function CheckboxIndicator() {
         id={id}
         onChange={() => setIsChecked(!isChecked)}
       />
-      <AnimatePresence mode="sync" initial={false}>
-        {!isChecked ? (
-          <svg width="20.5" height="20.5">
+      <AnimatePresence mode="wait" initial={false}>
+        {currentState === "checked" ? (
+          <svg width="20.5" height="20.5" key={currentState}>
             <motion.rect
               x="1"
               y="1"
@@ -71,8 +78,9 @@ function CheckboxIndicator() {
             className="size-5 rounded-md border-2 border-blue-500 bg-blue-500"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            exit={{ scale: 0 }}
+            exit={{ scale: 0, opacity: 0, transition: { delay: 0.4 } }}
             transition={{ duration: 0.2 }}
+            key={currentState}
           >
             <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-zinc-50">
               <svg
@@ -87,6 +95,7 @@ function CheckboxIndicator() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   d="M4.5 12.75l6 6 9-13.5"
+                  key={currentState}
                   initial={{
                     pathLength: 0,
                     opacity: 0,
@@ -94,6 +103,10 @@ function CheckboxIndicator() {
                   animate={{
                     pathLength: 1,
                     opacity: 1,
+                  }}
+                  exit={{
+                    pathLength: 0,
+                    opacity: 0,
                   }}
                   transition={{
                     duration: 0.2,
