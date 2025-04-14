@@ -5,11 +5,16 @@ import { AnimatePresence, motion } from "motion/react"
 interface CheckboxProps {
   label: string
   id: string
+  isChecked: boolean
+  setIsChecked: (isChecked: boolean) => void
 }
 
-export default function Checkbox({ label, id }: CheckboxProps) {
-  const [isChecked, setIsChecked] = React.useState(false)
-
+export default function Checkbox({
+  label,
+  id,
+  isChecked,
+  setIsChecked,
+}: CheckboxProps) {
   const currentState = React.useMemo(() => {
     if (isChecked) {
       return "checked"
