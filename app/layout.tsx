@@ -3,7 +3,7 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import { Geist_Mono, Mona_Sans } from "next/font/google"
+import { Geist_Mono, Inter, Mona_Sans } from "next/font/google"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -14,6 +14,12 @@ import "../styles/main.css"
 
 const sansFont = Mona_Sans({
   variable: "--sans-font",
+  subsets: ["latin"],
+  display: "swap",
+})
+
+const interFont = Inter({
+  variable: "--inter-font",
   subsets: ["latin"],
   display: "swap",
 })
@@ -37,7 +43,11 @@ const RootLayout: React.FC<Props> = ({ children }) => {
     <ViewTransitions>
       <html
         lang="en"
-        className={classNames(sansFont.variable, monoFont.variable)}
+        className={classNames(
+          sansFont.variable,
+          interFont.variable,
+          monoFont.variable
+        )}
       >
         <head>
           <script

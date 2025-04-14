@@ -19,6 +19,7 @@
 
 @theme {
   --font-sans: var(--sans-font);
+  --font-inter: var(--inter-font);
   --font-mono: var(--mono-font);
 
   --animate-swing: swing 1s infinite ease-in-out alternate;
