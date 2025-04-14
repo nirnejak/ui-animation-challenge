@@ -56,8 +56,8 @@ function CheckboxIndicator() {
         onChange={() => setIsChecked(!isChecked)}
       />
       <AnimatePresence mode="wait" initial={false}>
-        {currentState === "checked" ? (
-          <svg width="20.5" height="20.5" key={currentState}>
+        {currentState === "unchecked" ? (
+          <svg width="20" height="20" key={currentState}>
             <motion.rect
               x="1"
               y="1"
@@ -70,7 +70,7 @@ function CheckboxIndicator() {
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
               exit={{ pathLength: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             />
           </svg>
         ) : (
