@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext, useState } from "react"
 import { motion } from "framer-motion"
+import classNames from "@/utils/classNames"
 
 interface CheckboxContextProps {
   id: string
@@ -31,6 +32,24 @@ const tickVariants = {
   },
 }
 
+const boxVariants = {
+  checked: {
+    pathLength: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      delay: 0.2,
+    },
+  },
+  unchecked: {
+    pathLength: 0,
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+}
+
 interface CheckboxProps {
   children: ReactNode
   id: string
@@ -40,7 +59,7 @@ export default function Checkbox({ children, id }: CheckboxProps) {
   const [isChecked, setIsChecked] = useState(false)
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center hover:bg-zinc-100 transition-colors rounded-md p-2">
       <CheckboxContext.Provider
         value={{
           id,
@@ -61,11 +80,11 @@ function CheckboxIndicator() {
     <button className="relative flex items-center">
       <input
         type="checkbox"
-        className="border-blue-gray-200 relative h-5 w-5 cursor-pointer appearance-none rounded-md border-2 transition-all duration-500 checked:border-blue-500 checked:bg-blue-500"
+        className="border-zinc-400 relative h-5 w-5 cursor-pointer appearance-none rounded-md border-2 transition-all duration-500 checked:border-blue-500 checked:bg-blue-500"
         onChange={() => setIsChecked(!isChecked)}
         id={id}
       />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-zinc-50">
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -99,12 +118,11 @@ function CheckboxLabel({ children }: CheckboxLabelProps) {
 
   return (
     <motion.label
-      className="relative ml-2 overflow-hidden text-sm line-through"
+      className="relative ml-2 overflow-hidden text-sm"
       htmlFor={id}
       animate={{
         x: isChecked ? [0, -4, 0] : [0, 4, 0],
         color: isChecked ? "#a1a1aa" : "#27272a",
-        textDecorationLine: isChecked ? "line-through" : "none",
       }}
       initial={false}
       transition={{
@@ -113,6 +131,20 @@ function CheckboxLabel({ children }: CheckboxLabelProps) {
       }}
     >
       {children}
+      <motion.div
+        style={{
+          position: "absolute",
+          bottom: "48%",
+          left: 0,
+          width: isChecked ? "100%" : "0%",
+          height: "1px",
+          transformOrigin: "left",
+          background: isChecked ? "#a1a1aa" : "transparent",
+        }}
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: isChecked ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      />
     </motion.label>
   )
 }
