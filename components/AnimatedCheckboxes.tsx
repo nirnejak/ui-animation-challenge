@@ -6,18 +6,9 @@ import Checkbox from "@/components/Checkbox"
 const AnimatedCheckboxes = () => {
   return (
     <section className="flex flex-col items-start space-y-2 font-inter tracking-tight">
-      <Checkbox id="c-1">
-        <Checkbox.Indicator />
-        <Checkbox.Label>Buy Groceries</Checkbox.Label>
-      </Checkbox>
-      <Checkbox id="c-2">
-        <Checkbox.Indicator />
-        <Checkbox.Label>Contemplate existence</Checkbox.Label>
-      </Checkbox>
-      <Checkbox id="c-3">
-        <Checkbox.Indicator />
-        <Checkbox.Label>Learn Swift UI</Checkbox.Label>
-      </Checkbox>
+      <Checkbox id="c-1" label="Buy Groceries" />
+      <Checkbox id="c-2" label="Contemplate existence" />
+      <Checkbox id="c-3" label="Learn Swift UI" />
     </section>
   )
 }
