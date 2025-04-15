@@ -23,7 +23,7 @@ export default function Checkbox({
   }, [isChecked])
 
   return (
-    <div className="flex items-center hover:bg-zinc-100 transition-colors rounded-md p-2">
+    <div className="flex items-center hover:bg-zinc-100 transition-colors rounded-lg p-2">
       <label className="relative flex items-center">
         <input
           type="checkbox"
