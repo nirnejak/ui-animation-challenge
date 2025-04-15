@@ -15,14 +15,8 @@ const AnimatedToggles: React.FC = () => {
           right: tab === "free" ? "auto" : 4,
           left: tab === "free" ? 4 : "auto",
         }}
-        transition={{
-          type: "spring",
-          bounce: 0,
-          duration: 0.7,
-        }}
-        className={classNames(
-          "absolute top-1 z-10 rounded-full bg-black w-[251px] h-[62px]"
-        )}
+        transition={{ type: "spring", bounce: 0, duration: 0.7 }}
+        className="absolute top-1 z-10 rounded-full bg-black w-[251px] h-[62px]"
       />
       <div
         className={classNames(
@@ -58,10 +52,10 @@ const AnimatedToggles: React.FC = () => {
         <AnimatePresence initial={false}>
           {tab === "free" && (
             <motion.div
-              initial={{ scale: 1.7, y: 4 }}
+              initial={{ scale: 1.7, y: 0 }}
               animate={{ scale: 1, y: 12 }}
-              exit={{ scale: 1.7, y: 4 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
+              exit={{ scale: 1.7, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="absolute flex items-center gap-1 text-black text-sm font-normal"
             >
               Monthly
@@ -76,6 +70,7 @@ const AnimatedToggles: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.2 } }}
               transition={{
                 duration: 0.3,
                 ease: "easeOut",
