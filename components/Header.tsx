@@ -23,7 +23,7 @@ const links = [
   },
   {
     href: "/day-4/",
-    text: "Day 4 - Not yet announced",
+    text: "Day 4 - Animated Toggles",
   },
   {
     href: "/day-5/",
