@@ -74,8 +74,8 @@ const AnimatedToggles: React.FC = () => {
               transition={{
                 duration: 0.3,
                 ease: "easeOut",
-                originY: "bottom",
               }}
+              style={{ transformOrigin: "bottom" }}
               className="relative grid grid-cols-2 size-full items-center"
             >
               <motion.div
@@ -86,10 +86,10 @@ const AnimatedToggles: React.FC = () => {
                   left: tab === "monthly" ? 4 : "auto",
                 }}
                 transition={{
+                  type: "spring",
+                  bounce: 0,
                   duration: 0.3,
-                  ease: "easeOut",
                 }}
-                style={{ transformOrigin: "50% 50%" }}
                 className={classNames(
                   "absolute top-1 z-10 rounded-full bg-white w-[121px] h-[54px]"
                 )}
