@@ -15,7 +15,7 @@ const AnimatedToggles: React.FC = () => {
           right: tab === "free" ? "auto" : 4,
           left: tab === "free" ? 4 : "auto",
         }}
-        transition={{ type: "spring", bounce: 0, duration: 0.7 }}
+        transition={{ type: "spring", bounce: 0, duration: 0.3 }}
         className="absolute top-1 z-10 rounded-full bg-black w-[251px] h-[62px]"
       />
       <div
@@ -42,7 +42,7 @@ const AnimatedToggles: React.FC = () => {
               className="font-semibold text-lg top-3 absolute text-black"
               initial={false}
               animate={{ opacity: 1, y: -4 }}
-              exit={{ opacity: 0, y: 2 }}
+              exit={{ opacity: 1, y: 2 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
               Premium
