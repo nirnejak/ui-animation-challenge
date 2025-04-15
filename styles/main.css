@@ -19,8 +19,9 @@
 
 @theme {
   --font-sans: var(--sans-font);
-  --font-inter: var(--inter-font);
   --font-mono: var(--mono-font);
+  --font-inter: var(--inter-font);
+  --font-sora: var(--sora-font);
 
   --animate-swing: swing 1s infinite ease-in-out alternate;
   --animate-marquee: marquee 25s linear infinite;

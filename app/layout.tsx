@@ -3,7 +3,7 @@ import * as React from "react"
 import type { Viewport } from "next"
 import { ViewTransitions } from "next-view-transitions"
 
-import { Geist_Mono, Inter, Mona_Sans } from "next/font/google"
+import { Geist_Mono, Inter, Mona_Sans, Sora } from "next/font/google"
 
 import classNames from "@/utils/classNames"
 import { renderSchemaTags } from "@/utils/schema"
@@ -18,14 +18,20 @@ const sansFont = Mona_Sans({
   display: "swap",
 })
 
+const monoFont = Geist_Mono({
+  variable: "--mono-font",
+  subsets: ["latin"],
+  display: "swap",
+})
+
 const interFont = Inter({
   variable: "--inter-font",
   subsets: ["latin"],
   display: "swap",
 })
 
-const monoFont = Geist_Mono({
-  variable: "--mono-font",
+const soraFont = Sora({
+  variable: "--sora-font",
   subsets: ["latin"],
   display: "swap",
 })
@@ -45,8 +51,9 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         lang="en"
         className={classNames(
           sansFont.variable,
+          monoFont.variable,
           interFont.variable,
-          monoFont.variable
+          soraFont.variable
         )}
       >
         <head>
