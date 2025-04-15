@@ -15,7 +15,11 @@ const AnimatedToggles: React.FC = () => {
           right: tab === "free" ? "auto" : 4,
           left: tab === "free" ? 4 : "auto",
         }}
-        transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
+        transition={{
+          type: "spring",
+          bounce: 0,
+          duration: 0.7,
+        }}
         className={classNames(
           "absolute top-1 z-10 rounded-full bg-black w-[251px] h-[62px]"
         )}
@@ -43,94 +47,89 @@ const AnimatedToggles: React.FC = () => {
               key={tab}
               className="font-semibold text-lg top-3 absolute text-black"
               initial={false}
-              animate={{ opacity: 1, y: -3 }}
-              exit={{ opacity: 0, y: 5 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              animate={{ opacity: 1, y: -4 }}
+              exit={{ opacity: 0, y: 2 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
             >
               Premium
             </motion.div>
           )}
         </AnimatePresence>
-
-        <motion.div
-          initial={false}
-          animate={{
-            scale: 1,
-            // left: tab === "monthly" ? 4 : 125,
-            opacity: tab === "free" ? 0 : 1,
-            right: tab === "monthly" ? "auto" : 4,
-            left: tab === "monthly" ? 4 : "auto",
-          }}
-          transition={{
-            duration: 0.3,
-            ease: "easeOut",
-            origin: "bottom right",
-          }}
-          className={classNames(
-            "absolute top-1 z-10 rounded-full bg-white w-[121px] h-[54px]"
+        <AnimatePresence initial={false}>
+          {tab === "free" && (
+            <motion.div
+              initial={{ scale: 1.7, y: 4 }}
+              animate={{ scale: 1, y: 12 }}
+              exit={{ scale: 1.7, y: 4 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="absolute flex items-center gap-1 text-black text-sm font-normal"
+            >
+              Monthly
+              <span className="block size-1 rounded-full bg-black" />
+              Annual
+            </motion.div>
           )}
-        />
+        </AnimatePresence>
 
-        <motion.div
-          initial={false}
-          animate={{
-            y: tab === "free" ? 12 : 0,
-            scale: tab === "free" ? 1 : 1.2,
-            left: tab === "free" ? 60 : 36,
-          }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-          className="absolute text-sm z-30"
-          onClick={(e) => {
-            e.stopPropagation()
-            setTab("monthly")
-          }}
-        >
-          <span
-            className={classNames(
-              "transition-colors duration-200",
-              tab === "free"
-                ? "text-black font-normal"
-                : tab === "monthly"
-                  ? "text-black font-semibold"
-                  : "text-white font-semibold"
-            )}
-          >
-            Monthly
-          </span>
-        </motion.div>
-        <motion.span
-          initial={false}
-          animate={{ opacity: tab === "free" ? 1 : 0 }}
-          style={{ top: 41 }}
-          className="absolute size-1 rounded-full bg-black block"
-        />
-        <motion.div
-          initial={false}
-          animate={{
-            y: tab === "free" ? 12 : 0,
-            scale: tab === "free" ? 1 : 1.2,
-            right: tab === "free" ? 64 : 36,
-          }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-          className="absolute text-sm z-30"
-          onClick={(e) => {
-            e.stopPropagation()
-            setTab("annual")
-          }}
-        >
-          <span
-            className={classNames(
-              "transition-colors duration-200",
-              tab === "free"
-                ? "text-black font-normal"
-                : tab === "annual"
-                  ? "text-black font-semibold"
-                  : "text-white font-semibold"
-            )}
-          >
-            Annual
-          </span>
-        </motion.div>
+        <AnimatePresence>
+          {tab !== "free" && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+                originY: "bottom",
+              }}
+              className="relative grid grid-cols-2 size-full items-center"
+            >
+              <motion.div
+                initial={false}
+                animate={{
+                  scale: 1,
+                  right: tab === "monthly" ? "auto" : 4,
+                  left: tab === "monthly" ? 4 : "auto",
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
+                style={{ transformOrigin: "50% 50%" }}
+                className={classNames(
+                  "absolute top-1 z-10 rounded-full bg-white w-[121px] h-[54px]"
+                )}
+              />
+              <div
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setTab("monthly")
+                }}
+                className={classNames(
+                  "transition-colors duration-200 text-lg z-30 text-center",
+                  tab === "monthly"
+                    ? "text-black font-semibold"
+                    : "text-white font-semibold"
+                )}
+              >
+                Monthly
+              </div>
+              <div
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setTab("annual")
+                }}
+                className={classNames(
+                  "transition-colors duration-200 text-lg z-30 text-center",
+                  tab === "annual"
+                    ? "text-black font-semibold"
+                    : "text-white font-semibold"
+                )}
+              >
+                Annual
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   )
