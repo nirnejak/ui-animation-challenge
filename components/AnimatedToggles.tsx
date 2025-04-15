@@ -55,7 +55,7 @@ const AnimatedToggles: React.FC = () => {
               initial={{ scale: 1.7, y: 0 }}
               animate={{ scale: 1, y: 12 }}
               exit={{ scale: 1.7, y: 0 }}
-              transition={{ duration: 0.3, ease: "linear" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="absolute flex items-center gap-1 text-black text-sm font-normal"
             >
               Monthly
@@ -73,7 +73,7 @@ const AnimatedToggles: React.FC = () => {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{
                 duration: 0.3,
-                ease: "easeOut",
+                ease: "easeInOut",
               }}
               style={{ transformOrigin: "bottom" }}
               className="relative grid grid-cols-2 size-full items-center"
