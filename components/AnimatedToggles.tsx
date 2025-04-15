@@ -9,7 +9,7 @@ const AnimatedToggles: React.FC = () => {
   const [tab, setTab] = React.useState<"free" | "annual" | "monthly">("free")
 
   return (
-    <div className="font-sora relative flex items-center rounded-full text-white p-1 border border-zinc-200 shadow-md max-w-lg h-[72px]">
+    <div className="font-sora relative flex items-center rounded-full text-white p-1 border border-zinc-200 shadow-md max-w-lg h-[72px] tracking-tight">
       <motion.div
         animate={{
           right: tab === "free" ? "auto" : 4,
@@ -100,7 +100,7 @@ const AnimatedToggles: React.FC = () => {
                   setTab("monthly")
                 }}
                 className={classNames(
-                  "transition-colors duration-200 text-lg z-30 text-center",
+                  "transition-colors duration-200 text-base z-30 text-center",
                   tab === "monthly"
                     ? "text-black font-semibold"
                     : "text-white font-semibold"
@@ -114,7 +114,7 @@ const AnimatedToggles: React.FC = () => {
                   setTab("annual")
                 }}
                 className={classNames(
-                  "transition-colors duration-200 text-lg z-30 text-center",
+                  "transition-colors duration-200 text-base z-30 text-center",
                   tab === "annual"
                     ? "text-black font-semibold"
                     : "text-white font-semibold"
