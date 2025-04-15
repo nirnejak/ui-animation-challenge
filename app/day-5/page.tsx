@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { getMetadata } from "@/utils/metadata"
 
-import { TextScramble } from "@/components/text-scramble"
+import { TextScramble } from "@/components/atoms/text-scramble"
 
 export const metadata = getMetadata({
   path: "/day-5/",

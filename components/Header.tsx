@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 
 import classNames from "@/utils/classNames"
 
-import { TextScramble } from "@/components/text-scramble"
+import { TextScramble } from "@/components/atoms/text-scramble"
 
 const links = [
   {
