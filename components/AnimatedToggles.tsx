@@ -2,8 +2,8 @@
 import * as React from "react"
 
 import { AnimatePresence, motion } from "motion/react"
+
 import classNames from "@/utils/classNames"
-import { BASE_TRANSITION } from "@/utils/animation"
 
 const AnimatedToggles: React.FC = () => {
   const [tab, setTab] = React.useState<"free" | "annual" | "monthly">("free")
