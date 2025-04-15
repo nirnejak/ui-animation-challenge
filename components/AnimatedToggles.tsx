@@ -15,7 +15,7 @@ const AnimatedToggles: React.FC = () => {
           right: tab === "free" ? "auto" : 4,
           left: tab === "free" ? 4 : "auto",
         }}
-        transition={{ type: "spring", bounce: 0, duration: 0.3 }}
+        transition={{ type: "spring", bounce: 0, duration: 0.4 }}
         className="absolute top-1 z-10 rounded-full bg-black w-[251px] h-[62px]"
       />
       <div
@@ -39,11 +39,11 @@ const AnimatedToggles: React.FC = () => {
           {tab === "free" && (
             <motion.div
               key={tab}
-              className="font-semibold text-lg top-3 absolute text-black"
+              className="font-semibold text-lg absolute text-black"
               initial={false}
-              animate={{ opacity: 1, y: -4 }}
-              exit={{ opacity: 1, y: 2 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
+              animate={{ opacity: 1, top: 8 }}
+              exit={{ opacity: 1, top: 12 }}
+              transition={{ duration: 0.2, ease: "linear" }}
             >
               Premium
             </motion.div>
@@ -55,7 +55,7 @@ const AnimatedToggles: React.FC = () => {
               initial={{ scale: 1.7, y: 0 }}
               animate={{ scale: 1, y: 12 }}
               exit={{ scale: 1.7, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ duration: 0.3, ease: "linear" }}
               className="absolute flex items-center gap-1 text-black text-sm font-normal"
             >
               Monthly
