@@ -68,9 +68,9 @@ const AnimatedToggles: React.FC = () => {
         <AnimatePresence>
           {tab !== "free" && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.2 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
+              exit={{ opacity: 0, scale: 0.2 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               style={{ transformOrigin: "bottom" }}
               className="relative grid grid-cols-2 size-full items-center"
