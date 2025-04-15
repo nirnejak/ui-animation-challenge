@@ -71,10 +71,7 @@ const AnimatedToggles: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{
-                duration: 0.3,
-                ease: "easeInOut",
-              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               style={{ transformOrigin: "bottom" }}
               className="relative grid grid-cols-2 size-full items-center"
             >
@@ -85,11 +82,7 @@ const AnimatedToggles: React.FC = () => {
                   right: tab === "monthly" ? "auto" : 4,
                   left: tab === "monthly" ? 4 : "auto",
                 }}
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.3,
-                }}
+                transition={{ type: "spring", bounce: 0, duration: 0.3 }}
                 className={classNames(
                   "absolute top-1 z-10 rounded-full bg-white w-[121px] h-[54px]"
                 )}
@@ -100,10 +93,8 @@ const AnimatedToggles: React.FC = () => {
                   setTab("monthly")
                 }}
                 className={classNames(
-                  "transition-colors duration-200 text-base z-30 text-center",
-                  tab === "monthly"
-                    ? "text-black font-semibold"
-                    : "text-white font-semibold"
+                  "transition-colors duration-200 text-base z-30 text-center font-semibold",
+                  tab === "monthly" ? "text-black" : "text-white"
                 )}
               >
                 Monthly
@@ -114,10 +105,8 @@ const AnimatedToggles: React.FC = () => {
                   setTab("annual")
                 }}
                 className={classNames(
-                  "transition-colors duration-200 text-base z-30 text-center",
-                  tab === "annual"
-                    ? "text-black font-semibold"
-                    : "text-white font-semibold"
+                  "transition-colors duration-200 text-base z-30 text-center font-semibold",
+                  tab === "annual" ? "text-black" : "text-white"
                 )}
               >
                 Annual
