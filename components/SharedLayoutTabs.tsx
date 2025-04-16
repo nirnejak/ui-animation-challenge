@@ -183,10 +183,10 @@ const SharedLayoutTabs: React.FC = () => {
                       : "size-[88px]",
                   activeTab === "pack" &&
                     index === 0 &&
-                    "mt-2 translate-x-[50px] rotate-12",
+                    "mt-2 translate-x-[50px] rotate-12 transition-transform duration-200",
                   activeTab === "pack" &&
                     index === 1 &&
-                    "mt-2 -translate-x-[50px]  -rotate-12"
+                    "mt-2 -translate-x-[50px]  -rotate-12 transition-transform duration-200"
                 )}
                 layout
               />
