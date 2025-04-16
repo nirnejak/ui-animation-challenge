@@ -27,7 +27,7 @@ const SharedLayoutTabs: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState("list")
 
   return (
-    <div className="font-inter">
+    <div className="font-inter font-medium">
       <p className="mb-4">Collectibles</p>
       <div className="flex gap-2 pb-4 mb-4 border-b border-[#ebebeb]">
         <button
@@ -152,12 +152,12 @@ const SharedLayoutTabs: React.FC = () => {
 
       <motion.div
         className={classNames(
-          "gap-3",
+          "flex gap-3",
           activeTab === "list"
-            ? "flex flex-col"
+            ? "flex-col"
             : activeTab === "card"
-              ? "grid grid-cols-2"
-              : "flex justify-center"
+              ? "justify-between"
+              : "justify-center"
         )}
         layout
       >
@@ -190,10 +190,7 @@ const SharedLayoutTabs: React.FC = () => {
                 layout
               />
             </motion.div>
-            <motion.div
-              layout
-              className={activeTab === "pack" ? "hidden" : "font-medium"}
-            >
+            <motion.div layout className={activeTab === "pack" ? "hidden" : ""}>
               <motion.p
                 layout
                 initial={{ opacity: 0 }}
@@ -299,7 +296,7 @@ const SharedLayoutTabs: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3, delay: 0.2 }}
-          className="text-sm font-medium text-black text-center mt-6"
+          className="text-sm text-black text-center mt-6"
         >
           <span>{totalCollectibles} Collectibles</span>
           <p className="text-sm">
