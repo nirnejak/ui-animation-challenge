@@ -153,11 +153,9 @@ const SharedLayoutTabs: React.FC = () => {
       <motion.div
         className={classNames(
           "flex gap-3",
-          activeTab === "list"
-            ? "flex-col"
-            : activeTab === "card"
-              ? "justify-between"
-              : "justify-center"
+          activeTab === "list" && "flex-col",
+          activeTab === "card" && "justify-between",
+          activeTab === "pack" && "justify-center"
         )}
         layout
       >
@@ -167,7 +165,8 @@ const SharedLayoutTabs: React.FC = () => {
             layout
             className={classNames(
               "flex gap-3",
-              activeTab === "list" ? "items-center" : "flex-col items-start"
+              activeTab === "list" && "items-center",
+              activeTab === "card" && "flex-col items-start"
             )}
           >
             <motion.div layout>
@@ -175,14 +174,11 @@ const SharedLayoutTabs: React.FC = () => {
                 src={item.image}
                 alt={item.label}
                 className={classNames(
-                  activeTab === "pack" ? "rounded-[20px] mt-2" : "",
+                  activeTab === "list" && "size-14",
+                  activeTab === "card" && "size-full",
+                  activeTab === "pack" && "size-[88px] rounded-[20px] mt-2",
                   activeTab === "pack" && index === 0 && "translate-x-[50px]",
-                  activeTab === "pack" && index === 1 && "-translate-x-[50px]",
-                  activeTab === "list"
-                    ? "size-14"
-                    : activeTab === "card"
-                      ? "size-full"
-                      : "size-[88px]"
+                  activeTab === "pack" && index === 1 && "-translate-x-[50px]"
                 )}
                 animate={{
                   rotate: activeTab === "pack" ? (index === 0 ? -12 : 12) : 0,
@@ -190,7 +186,10 @@ const SharedLayoutTabs: React.FC = () => {
                 layout
               />
             </motion.div>
-            <motion.div layout className={activeTab === "pack" ? "hidden" : ""}>
+            <motion.div
+              layout
+              className={classNames(activeTab === "pack" && "hidden")}
+            >
               <motion.p
                 layout
                 initial={{ opacity: 0 }}
