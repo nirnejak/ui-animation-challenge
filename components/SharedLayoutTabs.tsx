@@ -186,24 +186,15 @@ const SharedLayoutTabs: React.FC = () => {
                 layout
               />
             </motion.div>
+
             <motion.div
               layout
               className={classNames(activeTab === "pack" && "hidden")}
             >
-              <motion.p
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className={"text-sm mb-1"}
-              >
+              <motion.p layout className="text-sm mb-1">
                 {item.label}
               </motion.p>
-              <motion.p
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-sm"
-              >
+              <motion.p layout className="text-sm">
                 <motion.span layout className="text-black">
                   {item.value}
                 </motion.span>
@@ -213,13 +204,16 @@ const SharedLayoutTabs: React.FC = () => {
                 </motion.span>
               </motion.p>
             </motion.div>
+
             <motion.div
               className={classNames(
-                "ml-auto text-[#838383] flex items-center gap-1 text-sm tracking-tight",
-                activeTab === "list" ? "" : "-mt-8",
-                activeTab === "pack" ? "hidden" : ""
+                "ml-auto flex items-center gap-1 text-sm tracking-tight text-[#838383]",
+                activeTab === "pack" && "hidden"
               )}
-              style={{ marginRight: activeTab === "list" ? "" : 8 }}
+              style={{
+                marginRight: activeTab === "list" ? "" : 8,
+                marginTop: activeTab === "list" ? "" : -32,
+              }}
               layout
             >
               <svg
