@@ -9,7 +9,7 @@ const AnimatedToggles: React.FC = () => {
   const [tab, setTab] = React.useState<"free" | "annual" | "monthly">("free")
 
   return (
-    <div className="font-sora relative flex items-center rounded-full text-white p-1 border border-zinc-200 shadow-md max-w-lg h-[72px] tracking-tight">
+    <div className="scale-60 md:scale-100 font-sora relative flex items-center rounded-full text-white p-1 border border-zinc-200 shadow-md max-w-lg h-[72px] tracking-tight">
       <motion.div
         animate={{
           right: tab === "free" ? "auto" : 4,
