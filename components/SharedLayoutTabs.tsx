@@ -175,19 +175,18 @@ const SharedLayoutTabs: React.FC = () => {
                 src={item.image}
                 alt={item.label}
                 className={classNames(
-                  activeTab === "pack" ? "rounded-xl" : "",
+                  activeTab === "pack" ? "rounded-xl mt-3" : "",
+                  activeTab === "pack" && index === 0 && "translate-x-[50px]",
+                  activeTab === "pack" && index === 1 && "-translate-x-[50px]",
                   activeTab === "list"
                     ? "size-14"
                     : activeTab === "card"
                       ? "size-full"
-                      : "size-[88px]",
-                  activeTab === "pack" &&
-                    index === 0 &&
-                    "mt-2 translate-x-[50px] rotate-12 transition-transform duration-200",
-                  activeTab === "pack" &&
-                    index === 1 &&
-                    "mt-2 -translate-x-[50px]  -rotate-12 transition-transform duration-200"
+                      : "size-[88px]"
                 )}
+                animate={{
+                  rotate: activeTab === "pack" ? (index === 0 ? -12 : 12) : 0,
+                }}
                 layout
               />
             </motion.div>
