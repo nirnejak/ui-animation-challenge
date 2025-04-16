@@ -27,7 +27,7 @@ const links = [
   },
   {
     href: "/day-5/",
-    text: "Day 5 - Not yet announced",
+    text: "Day 5 - Shared Layout Tabs",
   },
 ]
 
