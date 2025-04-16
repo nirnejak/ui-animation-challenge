@@ -175,7 +175,7 @@ const SharedLayoutTabs: React.FC = () => {
                 src={item.image}
                 alt={item.label}
                 className={classNames(
-                  activeTab === "pack" ? "rounded-xl mt-3" : "",
+                  activeTab === "pack" ? "rounded-[20px] mt-2" : "",
                   activeTab === "pack" && index === 0 && "translate-x-[50px]",
                   activeTab === "pack" && index === 1 && "-translate-x-[50px]",
                   activeTab === "list"
