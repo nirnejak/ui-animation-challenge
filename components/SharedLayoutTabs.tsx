@@ -1,7 +1,24 @@
 "use client"
 import * as React from "react"
 
+import { motion } from "motion/react"
+
 import classNames from "@/utils/classNames"
+
+const items = [
+  {
+    id: 209,
+    label: "Skilled Fingers Series",
+    value: 0.855,
+    image: "/zhwfznyberpnt9ztq4pb.svg",
+  },
+  {
+    id: 808,
+    label: "Vibrant Vibes Series",
+    value: 0.209,
+    image: "/vqwfmnpfc50mmnb3t5ow.svg",
+  },
+]
 
 const SharedLayoutTabs: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState("list")
@@ -130,7 +147,151 @@ const SharedLayoutTabs: React.FC = () => {
         </button>
       </div>
 
-      {/* Tabs Content */}
+      <motion.div
+        className={classNames(
+          "gap-3",
+          activeTab === "list" ? "flex flex-col" : "grid grid-cols-2"
+        )}
+        layout
+      >
+        {items.map((item, index) => (
+          <motion.div
+            key={index}
+            layout
+            className={classNames(
+              "flex gap-3",
+              activeTab === "list" ? "items-center" : "flex-col items-start"
+            )}
+          >
+            <motion.div layout>
+              <motion.img
+                src={item.image}
+                alt={item.label}
+                className={classNames(
+                  activeTab === "pack" ? "rounded-xl" : "",
+                  activeTab === "list"
+                    ? "size-14"
+                    : activeTab === "card"
+                      ? "size-full"
+                      : "size-[88px]",
+                  activeTab === "pack" &&
+                    index === 0 &&
+                    "translate-x-[130px] mt-2 rotate-12",
+                  activeTab === "pack" &&
+                    index === 1 &&
+                    "-translate-x-[50px] mt-2 -rotate-12"
+                )}
+                layout
+              />
+            </motion.div>
+            <motion.div
+              layout
+              className={activeTab === "pack" ? "hidden" : "font-medium"}
+            >
+              <motion.p layout className={"text-sm mb-1"}>
+                {item.label}
+              </motion.p>
+              <motion.p layout className="text-sm">
+                <motion.span layout className="text-black">
+                  {item.value}
+                </motion.span>
+                <motion.span layout className="text-[#838383]">
+                  {" "}
+                  ETH
+                </motion.span>
+              </motion.p>
+            </motion.div>
+            <motion.div
+              className={classNames(
+                "ml-auto text-[#838383] flex items-center gap-1 text-sm tracking-tight",
+                activeTab === "list" ? "" : "-mt-8",
+                activeTab === "pack" ? "hidden" : ""
+              )}
+              style={{ marginRight: activeTab === "list" ? "" : 8 }}
+              layout
+            >
+              <svg
+                width="13"
+                height="14"
+                viewBox="0 0 13 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_i_14_2337)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.751 4.72464L8.44634 1.41797C7.18501 0.155303 5.45101 0.192637 4.12965 1.51197L1.01498 4.62597C-0.302354 5.94927 -0.34102 7.68394 0.920313 8.9426L4.22498 12.2493C4.84098 12.8639 5.56901 13.1706 6.30567 13.1706C7.08034 13.1706 7.86567 12.8313 8.54167 12.1559L11.6557 9.0366C12.3097 8.38394 12.669 7.5886 12.669 6.7966C12.669 6.04127 12.351 5.32394 11.751 4.72464Z"
+                    fill="#FEBE02"
+                    fill-opacity="0.15"
+                  ></path>
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_i_14_2337"
+                    x="0"
+                    y="0.496094"
+                    width="12.6689"
+                    height="12.6746"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood
+                      flood-opacity="0"
+                      result="BackgroundImageFix"
+                    ></feFlood>
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape"
+                    ></feBlend>
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    ></feColorMatrix>
+                    <feOffset></feOffset>
+                    <feGaussianBlur stdDeviation="3.5"></feGaussianBlur>
+                    <feComposite
+                      in2="hardAlpha"
+                      operator="arithmetic"
+                      k2="-1"
+                      k3="1"
+                    ></feComposite>
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0.996078 0 0 0 0 0.745098 0 0 0 0 0.00784314 0 0 0 0.5 0"
+                    ></feColorMatrix>
+                    <feBlend
+                      mode="normal"
+                      in2="shape"
+                      result="effect1_innerShadow_14_2337"
+                    ></feBlend>
+                  </filter>
+                </defs>
+              </svg>
+              #{item.id}
+            </motion.div>
+          </motion.div>
+        ))}
+        {activeTab === "pack" && (
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="text-sm font-medium text-black text-center mx-auto mt-3 flex flex-col items-center w-full col-span-2"
+          >
+            <span className="text-black">2 Collectibles</span>
+            <p className="text-sm">
+              <span className="text-black">1.064</span>
+              <span className="text-[#838383]"> ETH</span>
+            </p>
+          </motion.p>
+        )}
+      </motion.div>
     </div>
   )
 }
