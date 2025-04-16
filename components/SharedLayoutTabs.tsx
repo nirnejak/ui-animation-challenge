@@ -33,7 +33,7 @@ const SharedLayoutTabs: React.FC = () => {
         <button
           style={{ boxShadow: "0 .5px .5px hsla(0,0%,81%,.4)" }}
           className={classNames(
-            "flex items-center gap-1 rounded-full py-2 px-3 cursor-pointer transition-colors duration-200 text-sm tracking-tight",
+            "flex items-center gap-1 rounded-full py-1.5 md:py-2 px-2 md:px-3 cursor-pointer transition-colors duration-200 text-xs md:text-sm tracking-tight",
             activeTab === "list"
               ? "bg-[#02B3FF] text-white"
               : "bg-[#F0F0F0] text-[#838383]"
@@ -78,7 +78,7 @@ const SharedLayoutTabs: React.FC = () => {
         <button
           style={{ boxShadow: "0 .5px .5px hsla(0,0%,81%,.4)" }}
           className={classNames(
-            "flex items-center gap-1 rounded-full py-2 px-3 cursor-pointer transition-colors duration-200 text-sm tracking-tight",
+            "flex items-center gap-1 rounded-full py-1.5 md:py-2 px-2 md:px-3 cursor-pointer transition-colors duration-200 text-xs md:text-sm tracking-tight",
             activeTab === "card"
               ? "bg-[#02B3FF] text-white"
               : "bg-[#F0F0F0] text-[#838383]"
@@ -124,7 +124,7 @@ const SharedLayoutTabs: React.FC = () => {
         <button
           style={{ boxShadow: "0 .5px .5px hsla(0,0%,81%,.4)" }}
           className={classNames(
-            "flex items-center gap-1 rounded-full py-2 px-3 cursor-pointer transition-colors duration-200 text-sm tracking-tight",
+            "flex items-center gap-1 rounded-full py-1.5 md:py-2 px-2 md:px-3 cursor-pointer transition-colors duration-200 text-xs md:text-sm tracking-tight",
             activeTab === "pack"
               ? "bg-[#02B3FF] text-white"
               : "bg-[#F0F0F0] text-[#838383]"
@@ -175,7 +175,7 @@ const SharedLayoutTabs: React.FC = () => {
                 alt={item.label}
                 className={classNames(
                   activeTab === "list" && "size-14",
-                  activeTab === "card" && "size-full",
+                  activeTab === "card" && "md:size-full",
                   activeTab === "pack" && "size-[88px] rounded-[20px] mt-2",
                   activeTab === "pack" && index === 0 && "translate-x-[50px]",
                   activeTab === "pack" && index === 1 && "-translate-x-[50px]"
