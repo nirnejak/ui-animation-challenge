@@ -20,6 +20,9 @@ const items = [
   },
 ]
 
+const totalCollectibles = 2
+const totalValue = 1.064
+
 const SharedLayoutTabs: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState("list")
 
@@ -150,7 +153,11 @@ const SharedLayoutTabs: React.FC = () => {
       <motion.div
         className={classNames(
           "gap-3",
-          activeTab === "list" ? "flex flex-col" : "grid grid-cols-2"
+          activeTab === "list"
+            ? "flex flex-col"
+            : activeTab === "card"
+              ? "grid grid-cols-2"
+              : "flex justify-center"
         )}
         layout
       >
@@ -176,10 +183,10 @@ const SharedLayoutTabs: React.FC = () => {
                       : "size-[88px]",
                   activeTab === "pack" &&
                     index === 0 &&
-                    "translate-x-[130px] mt-2 rotate-12",
+                    "mt-2 translate-x-[50px] rotate-12",
                   activeTab === "pack" &&
                     index === 1 &&
-                    "-translate-x-[50px] mt-2 -rotate-12"
+                    "mt-2 -translate-x-[50px]  -rotate-12"
                 )}
                 layout
               />
@@ -188,10 +195,20 @@ const SharedLayoutTabs: React.FC = () => {
               layout
               className={activeTab === "pack" ? "hidden" : "font-medium"}
             >
-              <motion.p layout className={"text-sm mb-1"}>
+              <motion.p
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className={"text-sm mb-1"}
+              >
                 {item.label}
               </motion.p>
-              <motion.p layout className="text-sm">
+              <motion.p
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-sm"
+              >
                 <motion.span layout className="text-black">
                   {item.value}
                 </motion.span>
@@ -276,22 +293,22 @@ const SharedLayoutTabs: React.FC = () => {
             </motion.div>
           </motion.div>
         ))}
-        {activeTab === "pack" && (
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="text-sm font-medium text-black text-center mx-auto mt-3 flex flex-col items-center w-full col-span-2"
-          >
-            <span className="text-black">2 Collectibles</span>
-            <p className="text-sm">
-              <span className="text-black">1.064</span>
-              <span className="text-[#838383]"> ETH</span>
-            </p>
-          </motion.p>
-        )}
       </motion.div>
+      {activeTab === "pack" && (
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+          className="text-sm font-medium text-black text-center mt-6"
+        >
+          <span className="text-black">{totalCollectibles} Collectibles</span>
+          <p className="text-sm">
+            <span className="text-black">{totalValue}</span>
+            <span className="text-[#838383]"> ETH</span>
+          </p>
+        </motion.p>
+      )}
     </div>
   )
 }
