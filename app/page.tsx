@@ -10,8 +10,10 @@ export const metadata = getMetadata({
 
 const Home: React.FC = () => {
   return (
-    <main>
-      <div></div>
+    <main className="mt-6 -mx-3.5 md:mx-0 md:mt-10 rounded-xl bg-zinc-50 border border-zinc-200">
+      <div className="h-[60vh] flex flex-col justify-center items-center gap-4">
+        <p>🎉 Won the Aceternity UI Pro in Challenge 🎉</p>
+      </div>
     </main>
   )
 }
