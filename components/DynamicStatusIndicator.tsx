@@ -80,8 +80,8 @@ const DynamicStatusIndicator: React.FC = () => {
             transition={{
               duration: 0.3,
               ease: "easeInOut",
-              origin: "bottom left",
             }}
+            style={{ transformOrigin: "bottom left" }}
             fill="currentColor"
             viewBox="0 0 16 16"
           >
