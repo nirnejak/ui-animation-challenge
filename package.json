@@ -17,7 +17,7 @@
     "akar-icons": "^1.9.31",
     "class-variance-authority": "^0.7.1",
     "dotenv": "^17.2.3",
-    "lucide-react": "^0.553.0",
+    "lucide-react": "^0.554.0",
     "motion": "^12.23.24",
     "next": "^16.0.3",
     "next-view-transitions": "^0.3.4",
@@ -32,9 +32,9 @@
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^24.10.1",
-    "@types/react": "^19.2.5",
+    "@types/react": "^19.2.6",
     "eslint": "^9.39.1",
-    "eslint-config-love": "^133.0.0",
+    "eslint-config-love": "^134.0.0",
     "eslint-config-next": "^16.0.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -44,12 +44,12 @@
     "eslint-plugin-tailwindcss": "^3.18.2",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.6",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.4"
+    "typescript-eslint": "^8.47.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint"
