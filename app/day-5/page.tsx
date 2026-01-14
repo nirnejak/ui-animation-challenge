@@ -12,8 +12,13 @@ export const metadata = getMetadata({
 
 const Day5: React.FC = () => {
   return (
-    <main className="mt-6 -mx-3.5 md:mx-0 md:mt-10 rounded-xl bg-zinc-50 border border-zinc-200">
-      <div className="h-[60vh] flex justify-center pt-24">
+    <main
+      className="
+        -mx-3.5 mt-6 rounded-xl border border-zinc-200 bg-zinc-50
+        md:mx-0 md:mt-10
+      "
+    >
+      <div className="flex h-[60vh] justify-center pt-24">
         <SharedLayoutTabs />
       </div>
     </main>

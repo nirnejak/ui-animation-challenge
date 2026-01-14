@@ -41,7 +41,7 @@ const DynamicStatusIndicator: React.FC = () => {
     return () => {
       clearInterval(interval)
     }
-  }, [])
+  }, [animate, scope])
 
   const getIcon = (status: string) => {
     switch (status) {
@@ -50,7 +50,7 @@ const DynamicStatusIndicator: React.FC = () => {
           <motion.svg
             width="24"
             height="24"
-            className="w-4 h-4"
+            className="size-4"
             ref={scope}
             animate={{ rotate: [0, 360 * 5, 360 * 7] }}
             transition={{
@@ -74,7 +74,7 @@ const DynamicStatusIndicator: React.FC = () => {
           <motion.svg
             width="24"
             height="24"
-            className="w-4 h-4"
+            className="size-4"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{
@@ -94,7 +94,7 @@ const DynamicStatusIndicator: React.FC = () => {
           <motion.svg
             width="24"
             height="24"
-            className="w-4 h-4 ml-0.5"
+            className="ml-0.5 size-4"
             animate={{ x: [0, -3, 3, -3, 3, 0] }}
             transition={{
               delay: 0.2,
@@ -119,7 +119,11 @@ const DynamicStatusIndicator: React.FC = () => {
         getColor(status[currentStatusIndex])
       )}
     >
-      <div className="w-max py-1.5 px-2.5 overflow-hidden flex items-center gap-1.5">
+      <div
+        className="
+          flex w-max items-center gap-1.5 overflow-hidden px-2.5 py-1.5
+        "
+      >
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
             transition={{

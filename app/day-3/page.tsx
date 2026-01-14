@@ -12,8 +12,13 @@ export const metadata = getMetadata({
 
 const Day3: React.FC = () => {
   return (
-    <main className="mt-6 -mx-3.5 md:mx-0 md:mt-10 rounded-xl bg-zinc-50 border border-zinc-200">
-      <div className="h-[60vh] grid place-content-center">
+    <main
+      className="
+        -mx-3.5 mt-6 rounded-xl border border-zinc-200 bg-zinc-50
+        md:mx-0 md:mt-10
+      "
+    >
+      <div className="grid h-[60vh] place-content-center">
         <AnimatedCheckboxes />
       </div>
     </main>

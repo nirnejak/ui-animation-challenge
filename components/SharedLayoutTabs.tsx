@@ -29,7 +29,7 @@ const SharedLayoutTabs: React.FC = () => {
   return (
     <div className="font-inter font-medium">
       <p className="mb-4">Collectibles</p>
-      <div className="flex gap-2 pb-4 mb-4 border-b border-[#ebebeb]">
+      <div className="mb-4 flex gap-2 border-b border-[#ebebeb] pb-4">
         <button
           style={{ boxShadow: "0 .5px .5px hsla(0,0%,81%,.4)" }}
           className={classNames(
@@ -191,7 +191,7 @@ const SharedLayoutTabs: React.FC = () => {
               layout
               className={classNames(activeTab === "pack" && "hidden")}
             >
-              <motion.p layout className="text-sm mb-1">
+              <motion.p layout className="mb-1 text-sm">
                 {item.label}
               </motion.p>
               <motion.p layout className="text-sm">
@@ -289,7 +289,7 @@ const SharedLayoutTabs: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3, delay: 0.2 }}
-          className="text-sm text-black text-center mt-6"
+          className="mt-6 text-center text-sm text-black"
         >
           <span>{totalCollectibles} Collectibles</span>
           <p className="text-sm">

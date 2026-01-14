@@ -23,7 +23,12 @@ export default function Checkbox({
   }, [isChecked])
 
   return (
-    <div className="flex items-center hover:bg-zinc-100 transition-colors rounded-lg p-2">
+    <div
+      className="
+        flex items-center rounded-lg p-2 transition-colors
+        hover:bg-zinc-100
+      "
+    >
       <label className="relative flex items-center">
         <input
           type="checkbox"
@@ -58,14 +63,19 @@ export default function Checkbox({
               transition={{ duration: 0.2 }}
               key={currentState}
             >
-              <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-zinc-50">
+              <div
+                className="
+                  pointer-events-none absolute top-1/2 left-1/2 -translate-1/2
+                  text-zinc-50
+                "
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="3.5"
                   stroke="currentColor"
-                  className="h-3.5 w-3.5"
+                  className="size-3.5"
                 >
                   <motion.path
                     strokeLinecap="round"

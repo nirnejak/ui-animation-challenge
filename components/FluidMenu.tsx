@@ -18,7 +18,7 @@ const GooeyFilter = ({
   strength?: number
 }) => {
   return (
-    <svg className="hidden absolute">
+    <svg className="absolute hidden">
       <defs>
         <filter id={id}>
           <feGaussianBlur
@@ -53,7 +53,10 @@ const FluidMenu: React.FC = () => {
               return (
                 <motion.button
                   key={item.label}
-                  className="absolute w-12 h-12 bg-[#efefef] rounded-full flex items-center justify-center cursor-pointer"
+                  className="
+                    absolute flex size-12 cursor-pointer items-center
+                    justify-center rounded-full bg-[#efefef]
+                  "
                   initial={{ x: 0, opacity: 0 }}
                   animate={{
                     y: (index + 1) * 44,
@@ -90,7 +93,12 @@ const FluidMenu: React.FC = () => {
                       }}
                     >
                       <a>
-                        <Icon className="w-5 h-5 text-zinc-500 hover:text-black" />
+                        <Icon
+                          className="
+                            size-5 text-zinc-500
+                            hover:text-black
+                          "
+                        />
                       </a>
                     </motion.div>
                   </AnimatePresence>
@@ -100,7 +108,10 @@ const FluidMenu: React.FC = () => {
         </AnimatePresence>
 
         <motion.button
-          className="relative w-12 h-12 bg-[#efefef] rounded-full flex items-center justify-center cursor-pointer"
+          className="
+            relative flex size-12 cursor-pointer items-center justify-center
+            rounded-full bg-[#efefef]
+          "
           onClick={() => setIsOpen(!isOpen)}
         >
           <AnimatePresence mode="wait">
@@ -112,7 +123,7 @@ const FluidMenu: React.FC = () => {
                 exit={{ opacity: 0, filter: "blur(10px)" }}
                 transition={{ duration: 0.2 }}
               >
-                <X className="w-5 h-5 text-black cursor-pointer" />
+                <X className="size-5 cursor-pointer text-black" />
               </motion.div>
             ) : (
               <motion.div
@@ -122,7 +133,7 @@ const FluidMenu: React.FC = () => {
                 exit={{ opacity: 0, filter: "blur(10px)" }}
                 transition={{ duration: 0.2 }}
               >
-                <Menu className="w-5 h-5 text-black" />
+                <Menu className="size-5 text-black" />
               </motion.div>
             )}
           </AnimatePresence>

@@ -9,14 +9,20 @@ const AnimatedToggles: React.FC = () => {
   const [tab, setTab] = React.useState<"free" | "annual" | "monthly">("free")
 
   return (
-    <div className="scale-60 md:scale-100 font-sora relative flex items-center rounded-full text-white p-1 border border-zinc-200 shadow-md max-w-lg h-[72px] tracking-tight">
+    <div
+      className="
+        relative flex h-[72px] max-w-lg scale-60 items-center rounded-full
+        border border-zinc-200 p-1 font-sora tracking-tight text-white shadow-md
+        md:scale-100
+      "
+    >
       <motion.div
         animate={{
           right: tab === "free" ? "auto" : 4,
           left: tab === "free" ? 4 : "auto",
         }}
         transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-        className="absolute top-1 z-10 rounded-full bg-black w-[251px] h-[62px]"
+        className="absolute top-1 z-10 h-[62px] w-[251px] rounded-full bg-black"
       />
       <div
         className={classNames(
@@ -39,7 +45,7 @@ const AnimatedToggles: React.FC = () => {
           {tab === "free" && (
             <motion.div
               key={tab}
-              className="font-semibold text-lg absolute text-black"
+              className="absolute text-lg font-semibold text-black"
               initial={false}
               animate={{ opacity: 1, top: 8 }}
               exit={{ opacity: 1, top: 12 }}
@@ -56,7 +62,9 @@ const AnimatedToggles: React.FC = () => {
               animate={{ scale: 1, y: 12 }}
               exit={{ scale: 1.7, y: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute flex items-center gap-1 text-black text-sm font-normal"
+              className="
+                absolute flex items-center gap-1 text-sm font-normal text-black
+              "
             >
               Monthly
               <span className="block size-1 rounded-full bg-black" />
@@ -73,7 +81,7 @@ const AnimatedToggles: React.FC = () => {
               exit={{ opacity: 0, scale: 0.2 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               style={{ transformOrigin: "bottom" }}
-              className="relative grid grid-cols-2 size-full items-center"
+              className="relative grid size-full grid-cols-2 items-center"
             >
               <motion.div
                 initial={false}

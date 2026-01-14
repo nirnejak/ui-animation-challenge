@@ -65,7 +65,12 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           {renderSchemaTags()}
         </head>
 
-        <body className="overflow-x-hidden bg-zinc-100 font-mono p-7 md:p-20">
+        <body
+          className="
+            overflow-x-hidden bg-zinc-100 p-7 font-mono
+            md:p-20
+          "
+        >
           <Header />
           {children}
         </body>

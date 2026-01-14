@@ -35,10 +35,25 @@ const Header: React.FC = () => {
   const pathname = usePathname()
 
   return (
-    <header className="grid grid-cols-1 md:grid-cols-5">
-      <section className="flex flex-col-reverse md:flex-col justify-between items-start col-span-3">
+    <header
+      className="
+        grid grid-cols-1
+        md:grid-cols-5
+      "
+    >
+      <section
+        className="
+          col-span-3 flex flex-col-reverse items-start justify-between
+          md:flex-col
+        "
+      >
         <Link href="/">
-          <h1 className="text-2xl md:text-3xl text-zinc-800 tracking-tight">
+          <h1
+            className="
+              text-2xl tracking-tight text-zinc-800
+              md:text-3xl
+            "
+          >
             <TextScramble className="uppercase">Peerlist</TextScramble>
             <TextScramble className="uppercase">UI Animation</TextScramble>
             <TextScramble className="uppercase">Challenge</TextScramble>
@@ -48,12 +63,21 @@ const Header: React.FC = () => {
         <a
           href="https://x.com/jeetnirnejak"
           target="_blank"
-          className="tracking-tight text-zinc-500 hover:text-zinc-800 transition-colors text-sm md:text-lg mb-2 md:mb-0"
+          className="
+            mb-2 text-sm tracking-tight text-zinc-500 transition-colors
+            hover:text-zinc-800
+            md:mb-0 md:text-lg
+          "
         >
           <TextScramble>by Jitendra Nirnejak</TextScramble>
         </a>
       </section>
-      <section className="flex flex-col gap-3 mt-16 md:mt-0 col-span-2">
+      <section
+        className="
+          col-span-2 mt-16 flex flex-col gap-3
+          md:mt-0
+        "
+      >
         {links.map((link) => (
           <Link
             key={link.href}
