@@ -13,6 +13,7 @@ const AnimatedCheckboxes = () => {
   const [tasks, setTasks] = React.useState(initialTasks)
 
   return (
+    // eslint-disable-next-line better-tailwindcss/enforce-consistent-line-wrapping
     <section className="flex flex-col items-start space-y-2 font-inter tracking-tight">
       {tasks.map((task) => (
         <Checkbox
